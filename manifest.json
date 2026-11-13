@@ -2,7 +2,7 @@
   "id": "file-quicknote",
   "name": "File2QuickNote",
   "version": "1.0.0",
-  "minAppVersion": "1.5.0",
+  "minAppVersion": "1.13.0",
   "description": "Create same-named Markdown quick notes next to any file.",
   "author": "debrwejo17",
   "isDesktopOnly": false
