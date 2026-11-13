@@ -1,0 +1,9 @@
+{
+  "id": "file2quicknote",
+  "name": "File2QuickNote",
+  "version": "1.0.0",
+  "minAppVersion": "1.5.0",
+  "description": "Obsidian plugin for creating same-named Markdown quick notes next to any file.",
+  "author": "File2QuickNote contributors",
+  "isDesktopOnly": false
+}
