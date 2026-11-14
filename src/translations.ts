@@ -1,3 +1,5 @@
+import { moment } from "obsidian";
+
 // Simple translation system for File2QuickNote.
 // Obsidian stores the user's language preference; we detect it via moment.locale().
 
@@ -17,7 +19,7 @@ const de: Translations = {
   createQuickNote: "QuickNote erstellen",
   fileLink: (fileName) => `Datei öffnen: ${fileName}`,
   directoryBlockingError: (path) =>
-    `Ein Ordner mit dem gleichen Namen blockiert den Notiz-Pfad "${path}". Benennen oder löschen Sie ihn.`,
+    `Ein Ordner mit dem gleichen Namen blockiert den Notiz-Pfad "${path}". Bitte umbenennen oder löschen.`,
   failureNotice: (details) => `File2QuickNote: Notiz konnte nicht erstellt oder geöffnet werden. ${details}`,
   noteExistsTitle: "Notiz existiert bereits",
   noteExistsMessage: (fileName) => `Die Notiz zu "${fileName}" existiert bereits.`,
@@ -38,9 +40,9 @@ const en: Translations = {
 function detectLanguage(): SupportedLanguage {
   // Obsidian uses moment.locale() to track the user's language setting.
   // Extract the language code (e.g., "de" from "de-DE").
-  const locale = (window as any).moment?.locale?.() || "en";
+  const locale = moment.locale();
   const langCode = locale.split("-")[0];
-  return (langCode === "de" ? "de" : "en") as SupportedLanguage;
+  return langCode === "de" ? "de" : "en";
 }
 
 export function getTranslations(): Translations {
