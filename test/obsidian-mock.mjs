@@ -12,9 +12,15 @@ export class WorkspaceTabs {
   }
 }
 
-export class FileView {
-  constructor(leaf, file, rect) {
+export class View {
+  constructor(leaf) {
     this.leaf = leaf;
+  }
+}
+
+export class FileView extends View {
+  constructor(leaf, file, rect) {
+    super(leaf);
     this.file = file;
     this.containerEl = { getBoundingClientRect: () => rect };
   }

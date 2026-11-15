@@ -1,5 +1,5 @@
 import {
-  ConfirmationModal, FileView, Notice, Plugin, TFile, WorkspaceTabs
+  ConfirmationModal, FileView, Notice, Plugin, TFile, View, WorkspaceTabs
 } from "obsidian";
 import type { WorkspaceItem, WorkspaceLeaf } from "obsidian";
 import { getQuickNotePath, isMarkdownExtension } from "./quick-note-path";
@@ -87,7 +87,7 @@ export default class File2QuickNotePlugin extends Plugin {
 
   private async openQuickNoteInNewTab(noteFile: TFile): Promise<void> {
     const workspace = this.app.workspace;
-    const activeLeaf = workspace.activeLeaf;
+    const activeLeaf = workspace.getActiveViewOfType(View)?.leaf;
     if (!activeLeaf) {
       throw new Error(getTranslations().unsupportedPane);
     }
