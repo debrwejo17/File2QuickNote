@@ -1,6 +1,6 @@
 {
   "name": "file2quicknote",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "description": "Create or open a same-named Markdown note next to any vault file.",

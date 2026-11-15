@@ -7,6 +7,9 @@ type SupportedLanguage = "de" | "en";
 
 interface Translations {
   createQuickNote: string;
+  openQuickNote: string;
+  invalidActiveFile: string;
+  unsupportedPane: string;
   fileLink: (fileName: string) => string;
   directoryBlockingError: (path: string) => string;
   failureNotice: (details: string) => string;
@@ -17,6 +20,9 @@ interface Translations {
 
 const de: Translations = {
   createQuickNote: "QuickNote erstellen",
+  openQuickNote: "QuickNote für aktive Datei öffnen",
+  invalidActiveFile: "File2QuickNote: Bitte eine Nicht-Markdown-Datei im Hauptbereich öffnen und auswählen.",
+  unsupportedPane: "Der gewünschte Notiz-Tab konnte nicht im Zielbereich geöffnet werden.",
   fileLink: (fileName) => `Datei öffnen: ${fileName}`,
   directoryBlockingError: (path) =>
     `Ein Ordner mit dem gleichen Namen blockiert den Notiz-Pfad "${path}". Bitte umbenennen oder löschen.`,
@@ -28,6 +34,9 @@ const de: Translations = {
 
 const en: Translations = {
   createQuickNote: "Create QuickNote",
+  openQuickNote: "Open QuickNote for active file",
+  invalidActiveFile: "File2QuickNote: Select an open non-Markdown file in the main workspace.",
+  unsupportedPane: "Could not open the note tab in the target pane.",
   fileLink: (fileName) => `Open file: ${fileName}`,
   directoryBlockingError: (path) =>
     `A directory with the same name is blocking the note path "${path}". Rename or remove it first.`,
